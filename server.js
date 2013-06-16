@@ -5,7 +5,8 @@ var express = require('express'),
     flash = require('connect-flash'),
     routes = require('./routes'),
     local = require('./lib/util/local'),
-    config = require('./config');
+    config = require('./config'),
+    auth = require('./lib/auth');
 
 // サーバのアドレスとポート
 var partials = require('express-partials');
@@ -35,6 +36,12 @@ app.configure(function(){
   app.use(express.static(path.join(__dirname, 'public')));
   app.use(express.static('public/common'));
   app.use(express.static('public/'+config.ENV_NAME));
+  //Check user authentication
+    /*
+  app.use(function(req, res, next) {
+      auth.ensureAuthentication(req, res, next)
+  });
+  */
 });
 
 app.configure('development', function(){

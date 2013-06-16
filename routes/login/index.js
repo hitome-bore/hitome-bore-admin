@@ -1,5 +1,5 @@
 /**
- * @fileOverview login(login page) controller
+ * @fileOverview login(login page) service
  * @name index.js
  * @author Shun Kokubo <shnkkb@gmail.com>
  */
@@ -42,6 +42,7 @@ Login.prototype.post = function(req, res) {
                 req.session.user = {name: userName};
                 return res.redirect('/');
             }
+            console.log(result);
             req.flash('errMsg', result.message);
             req.flash('userName', userName);
             res.redirect('/login');
