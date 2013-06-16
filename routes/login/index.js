@@ -42,7 +42,6 @@ Login.prototype.post = function(req, res) {
                 req.session.user = {name: userName};
                 return res.redirect('/');
             }
-            console.log(result);
             req.flash('errMsg', result.message);
             req.flash('userName', userName);
             res.redirect('/login');

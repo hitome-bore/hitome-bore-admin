@@ -32,16 +32,14 @@ app.configure(function(){
   app.use(accessLogger);
   app.use(express.session({cookie: {maxAge: 86400}, secret: 'your secret'}));
   app.use(flash());
-  app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
   app.use(express.static('public/common'));
   app.use(express.static('public/'+config.ENV_NAME));
   //Check user authentication
-    /*
   app.use(function(req, res, next) {
-      auth.ensureAuthentication(req, res, next)
+    auth.ensureAuthentication(req, res, next)
   });
-  */
+  app.use(app.router);
 });
 
 app.configure('development', function(){
