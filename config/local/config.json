@@ -4,7 +4,15 @@
 	"HOST_NAME": "localhost",
 	"PORT": "3000",
 	"BASIC_AUTH": "",
+	"mongodb": {
+		"host": "127.0.0.1",
+		"port": "27017",
+		"database": "hitome_bore"
+	},
 	"handlers": {
+		"login": {
+			"url": "/login"
+		},
 		"home": {
 			"url": "/"
 		},

@@ -2,6 +2,7 @@ var express = require('express'),
     expressValidator = require('express-validator'),
     http = require('http'),
     path = require('path'),
+    flash = require('connect-flash'),
     routes = require('./routes'),
     local = require('./lib/util/local'),
     config = require('./config');
@@ -28,7 +29,8 @@ app.configure(function(){
   app.use(express.methodOverride());
   app.use(express.cookieParser('your secret here'));
   app.use(accessLogger);
-  app.use(express.session());
+  app.use(express.session({cookie: {maxAge: 86400}, secret: 'your secret'}));
+  app.use(flash());
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
   app.use(express.static('public/common'));

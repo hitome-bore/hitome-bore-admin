@@ -1,21 +1,20 @@
 {
-
-    "ENV_NAME": "develop",
-    "NAME": "開発環境",
-    "HOST_NAME": "localhost",
-    "PORT": "3000",
-    "BASIC_AUTH": "",
+	"ENV_NAME": "develop",
+	"NAME": "開発環境",
+	"HOST_NAME": "localhost",
+	"PORT": "3000",
+	"BASIC_AUTH": "",
 	"mongodb": {
 		"host": "127.0.0.1",
 		"port": "27017",
 		"database": "hitome_bore"
 	},
-    "handlers": {
-        "home": {
-            "url": "/"
-        },
-        "hoge/fuga": {
-            "url": "/hoge/fuga"
-        }
-    }
+	"handlers": {
+		"home": {
+			"url": "/"
+		},
+		"hoge/fuga": {
+			"url": "/hoge/fuga"
+		}
+	}
 }
